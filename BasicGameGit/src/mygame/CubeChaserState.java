@@ -30,6 +30,7 @@ public class CubeChaserState extends AbstractAppState {
     private Node rootNode;
     private AssetManager assetManager;
     private static Box mesh = new Box(1, 1, 1);
+    private int counter = 0;
     
     @Override
     public void update(float tpf) {
@@ -42,10 +43,15 @@ public class CubeChaserState extends AbstractAppState {
             if (target.getControl(CubeChaserControl.class) != null) {
                 if (cam.getLocation().distance(target.getLocalTranslation()) < 10) {
                     target.move(cam.getDirection());
+                    System.out.println(target.getControl(CubeChaserControl.class).hello()
+                            + " and I am running away from " + cam.getLocation());
+                    counter++;
                 }
             }
         }
     }
+    
+    public int getCounter() { return counter; }
     
     @Override
     public void cleanup() {}

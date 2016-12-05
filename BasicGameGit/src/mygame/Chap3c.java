@@ -27,34 +27,12 @@ public class Chap3c extends SimpleApplication {
         flyCam.setMoveSpeed(70f);
         CubeChaserState state = new CubeChaserState();
         stateManager.attach(state);
+        
     }
-
-//    private void makeCubes(int number) {
-//        for (int i = 0; i < number; i++) {
-//            Vector3f loc = new Vector3f(
-//                    FastMath.nextRandomInt(-20, 20),
-//                    FastMath.nextRandomInt(-20, 20),
-//                    FastMath.nextRandomInt(-20, 20));
-//            Geometry geom = myCube("Cube" + i, loc, ColorRGBA.randomColor());
-//            if (FastMath.nextRandomInt(1, 4) == 4) {
-//                geom.addControl(new CubeChaserControl(cam, rootNode));
-//            }
-//            rootNode.attachChild(geom);
-//        }
-//    }
-//    
-//    private Geometry myCube(String name, Vector3f loc, ColorRGBA color) {
-//        Geometry geom = new Geometry(name, mesh);
-//        Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-//        mat.setColor("Color", color);
-//        geom.setMaterial(mat);
-//        geom.setLocalTranslation(loc);
-//        return geom;
-//    }
     
     @Override
     public void simpleUpdate(float tpf) {
-        
+        System.out.println("Chase counter: " + stateManager.getState(CubeChaserState.class).getCounter());
     }
 
     @Override

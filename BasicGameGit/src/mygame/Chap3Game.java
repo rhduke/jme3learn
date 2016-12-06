@@ -39,8 +39,6 @@ public class Chap3Game extends SimpleApplication{
         stateManager.attach(state);
     }
     
-    
-    
     @Override
     public void simpleUpdate(float tpf) {
         
